@@ -1,7 +1,10 @@
-// 'airbnb/base'
 module.exports = {
-  extends: ['airbnb/base', 'prettier', 'prettier/react'],
-
+  extends: [
+    'airbnb/base',
+    'prettier',
+    'prettier/react',
+    'plugin:import/warnings',
+  ],
   settings: {
     'import/resolver': {
       'babel-module': {},
@@ -25,7 +28,14 @@ module.exports = {
       modules: true,
     },
   },
-  plugins: ['react', 'jsx-a11y', 'import', 'prettier'],
+
+  plugins: [
+    'react',
+    'prettier',
+    'import',
+    'sort-imports-es6-autofix',
+    'import-order-autofix',
+  ],
   rules: {
     // Ignore Rules
     'space-infix-ops': 2,
@@ -37,7 +47,26 @@ module.exports = {
     'no-warning-comments': 0,
     curly: 0,
     'no-confusing-arrow': 0,
-    'arrow-parens': [2, 'as-needed', { requireForBlockBody: true }],
+    'arrow-parens': [2, 'as-needed', { requireForBlockBody: false }],
+    'sort-imports-es6-autofix/sort-imports-es6': [
+      0,
+      {
+        ignoreCase: true,
+        ignoreMemberSort: false,
+        memberSyntaxSortOrder: ['single', 'multiple', 'all', 'none'],
+      },
+    ],
+    'import-order-autofix/order': [
+      0,
+      {
+        'newlines-between': 'ignore',
+        groups: [
+          ['builtin', 'external'],
+          ['internal', 'index', 'parent', 'sibling'],
+          // ['parent', 'sibling'],
+        ],
+      },
+    ],
     'no-alert': 0,
     // Warnings
     'no-debugger': 1,
@@ -48,7 +77,16 @@ module.exports = {
     'no-fallthrough': 1,
     'handle-callback-err': 1,
     camelcase: 0,
-    'max-len': [2, 80],
+    'max-len': [
+      2,
+      {
+        code: 80,
+        ignoreTemplateLiterals: true,
+        ignoreStrings: true,
+        ignoreUrls: true,
+      },
+    ],
+    'no-else-return': 0,
     'newline-per-chained-call': ['error', { ignoreChainWithDepth: 3 }],
     // Errors
     'func-call-spacing': ['error', 'never'],
@@ -57,7 +95,7 @@ module.exports = {
     'no-empty-character-class': 2,
     'no-self-compare': 2,
     'valid-typeof': 2,
-    'no-unused-vars': 1,
+    'no-unused-vars': 2,
     'no-multi-spaces': [
       2,
       {
@@ -146,7 +184,17 @@ module.exports = {
       },
     ],
     'newline-after-var': ['error', 'always'],
-    // 'object-property-newline': ['error', { allowMultiplePropertiesPerLine: true }],
+
+    'no-else-return': 0,
+    'padding-line-between-statements': [
+      'error',
+      { blankLine: 'always', prev: ['const', 'let', 'var'], next: '*' },
+      {
+        blankLine: 'any',
+        prev: ['const', 'let', 'var'],
+        next: ['const', 'let', 'var'],
+      },
+    ], // 'object-property-newline': ['error', { allowMultiplePropertiesPerLine: true }],
     'line-comment-position': ['error', { position: 'above' }],
     'brace-style': [
       'error',

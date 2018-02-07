@@ -6,12 +6,12 @@ WORKDIR /app
  
 # Install app dependencies
 # COPY package.json /app/
-# RUN yarn
+RUN yarn
  
 # Bundle app source
 # COPY . /usr/src/app
  
 # EXPOSE 3000 
-# CMD [ "yarn", "dev" ]
+CMD [ "yarn", "start" ]
 # docker run -v $(pwd)/:/app -it servicr
 # $ docker build -t tfpractice/servicr .
