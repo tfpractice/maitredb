@@ -4,10 +4,14 @@ import express from 'express';
 import mongoose from 'mongoose';
 import bluebird from 'bluebird';
 import { Table } from '../models';
+import Faker from 'faker';
 
-mongoose.Promise = bluebird;
+const fword = Faker.lorem.word(4);
+const DB_URL = process.env.DB_URL || `mongodb://localhost/maitredb`;
+
+console.log('fword', fword);
 mongoose
-  .connect('mongodb://maitredb_db_1', { promiseLibrary: bluebird })
+  .connect(DB_URL, { promiseLibrary: bluebird })
   .then(db => {
     console.log('db connected');
   })

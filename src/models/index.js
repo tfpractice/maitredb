@@ -1,1 +1,1 @@
-exports.Table = require('./table');
+export { default as Table } from './table';
