@@ -9,7 +9,6 @@ import Faker from 'faker';
 const fword = Faker.lorem.word(4);
 const DB_URL = process.env.DB_URL || `mongodb://localhost/maitredb`;
 
-console.log('fword', fword);
 mongoose
   .connect(DB_URL, { promiseLibrary: bluebird })
   .then(db => {
