@@ -13,7 +13,10 @@ const PartySchema = new Schema(
       type: Number,
       default: () => Faker.random.number({ min: 2, max: 15 }),
     },
-    state: { type: String, enum: PARTY_STATES, default: PENDING },
+    state: {
+      status: { type: String, enum: PARTY_STATES, default: PENDING },
+      setAt: { type: Date, default: Date.now },
+    },
   },
   {
     toObject: { getters: true, virtuals: false },
