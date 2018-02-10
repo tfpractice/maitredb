@@ -1,8 +1,12 @@
-import { Schema } from 'mongoose';
 import Faker from 'faker';
+import bluebird from 'bluebird';
+import mongoose, { Schema } from 'mongoose';
+
+mongoose.Promise = bluebird;
 
 const TableSchema = new Schema(
   {
+    name: { type: String, unique: true, default: Faker.random.word },
     capacity: {
       type: Number,
       default: () => Faker.random.number({ min: 2, max: 8 }),

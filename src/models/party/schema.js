@@ -1,5 +1,8 @@
-import { Schema } from 'mongoose';
 import Faker from 'faker';
+import bluebird from 'bluebird';
+import mongoose, { Schema } from 'mongoose';
+
+mongoose.Promise = bluebird;
 
 const PartySchema = new Schema(
   {
