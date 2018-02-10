@@ -49,7 +49,7 @@ module.exports = {
     'no-confusing-arrow': 0,
     'arrow-parens': [2, 'as-needed', { requireForBlockBody: false }],
     'sort-imports-es6-autofix/sort-imports-es6': [
-      0,
+      2,
       {
         ignoreCase: true,
         ignoreMemberSort: false,
@@ -57,9 +57,9 @@ module.exports = {
       },
     ],
     'import-order-autofix/order': [
-      0,
+      2,
       {
-        'newlines-between': 'ignore',
+        'newlines-between': 'always',
         groups: [
           ['builtin', 'external'],
           ['internal', 'index', 'parent', 'sibling'],

@@ -1,5 +1,5 @@
-import Faker from 'faker';
 import bluebird from 'bluebird';
+import Faker from 'faker';
 import mongoose, { Schema } from 'mongoose';
 
 import { PARTY_STATES, PENDING } from './helpers';
