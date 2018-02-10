@@ -6,7 +6,6 @@ services:
     build: .
     volumes:
      - .:/app
-     - /data/db
   db:
     image: 'mongo'
     volumes:
