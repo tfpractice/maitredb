@@ -6,7 +6,7 @@ import { PAID, PENDING, QUIT, SEATED, SERVED } from './helpers';
 
 mongoose.Promise = bluebird;
 
-PartySchema.methods.updateStatus = function(status) {
+PartySchema.methods.updateStatus = function(status = PENDING) {
   return this.update({ state: { status, setAt: Date.now() }});
 };
 

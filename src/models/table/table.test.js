@@ -1,9 +1,12 @@
-import 'jasmine-expect';
 import mongoose from 'mongoose';
-import Table from './model';
 
+import Table from './model';
+import 'jasmine-expect';
+
+console.log('Table.constructor', Table.constructor);
 describe('Table', () => {
-  it('is an instance of mongoose model', () => {
-    expect(Table instanceof mongoose.model).toBe(true);
-  });
+  it('has a name', () =>
+    Table.create({ name: 'myName' }).then(tb =>
+      expect(tb.name).toEqual('myName')
+    ));
 });
