@@ -11,7 +11,7 @@ const PartySchema = new Schema(
     name: { type: String, default: Faker.name.firstName },
     size: {
       type: Number,
-      default: () => Faker.random.number({ min: 2, max: 15 }),
+      default: () => Faker.random.number({ min: 2, max: 8 }),
     },
     state: {
       status: { type: String, enum: PARTY_STATES, default: PENDING },
