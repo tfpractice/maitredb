@@ -4,6 +4,9 @@ import mongoose from 'mongoose';
 import TableSchema from './schema';
 
 mongoose.Promise = bluebird;
+TableSchema.statics.freeTables = function() {
+  return this.find({ party: null });
+};
 
 TableSchema.methods.seatParty = function(party) {
   return this.update({ party });
