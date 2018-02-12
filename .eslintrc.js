@@ -4,7 +4,7 @@ module.exports = {
     'airbnb/base',
     'prettier',
     'prettier/react',
-    'plugin:import/warnings'
+    'plugin:import/warnings',
   ],
   parser: 'babel-eslint',
   parserOptions: {
@@ -13,22 +13,22 @@ module.exports = {
     ecmaFeatures: {
       experimentalObjectRestSpread: true,
       jsx: true,
-      modules: true
-    }
+      modules: true,
+    },
   },
   plugins: [
     'react',
     'prettier',
     'import',
     'sort-imports-es6-autofix',
-    'import-order-autofix'
+    'import-order-autofix',
   ],
   settings: {
     'import/resolver': {
       'babel-module': {},
       'babel-module-alias': {},
-      webpack: { config: './config/webpack/config.babel.js' }
-    }
+      webpack: { config: './config/webpack/config.babel.js' },
+    },
   },
   rules: {
     'space-infix-ops': 2,
@@ -49,7 +49,7 @@ module.exports = {
     'no-invalid-regexp': 1,
     'no-unused-expressions': [
       'error',
-      { allowShortCircuit: true, allowTernary: true }
+      { allowShortCircuit: true, allowTernary: true },
     ],
     'no-native-reassign': 1,
     'no-fallthrough': 1,
@@ -61,12 +61,13 @@ module.exports = {
         code: 80,
         ignoreTemplateLiterals: true,
         ignoreStrings: true,
-        ignoreUrls: true
-      }
+        ignoreUrls: true,
+      },
     ],
     'no-else-return': 0,
     'newline-per-chained-call': ['error', { ignoreChainWithDepth: 3 }],
     'func-call-spacing': ['error', 'never'],
+    'func-names': 0,
     'no-undef': 'off',
     'no-dupe-keys': 2,
     'no-empty-character-class': 2,
@@ -82,7 +83,7 @@ module.exports = {
     'array-bracket-spacing': [
       'error',
       'always',
-      { singleValue: true, objectsInArrays: false, arraysInArrays: false }
+      { singleValue: true, objectsInArrays: false, arraysInArrays: false },
     ],
     indent: [
       'error',
@@ -92,16 +93,16 @@ module.exports = {
         FunctionExpression: { body: 1, parameters: 'first' },
         MemberExpression: 1,
         ObjectExpression: 'first',
-        VariableDeclarator: 0
-      }
+        VariableDeclarator: 0,
+      },
     ],
     quotes: [2, 'single', { avoidEscape: true, allowTemplateLiterals: true }],
     'key-spacing': [
       2,
       {
         singleLine: { beforeColon: false, afterColon: true, mode: 'minimum' },
-        multiLine: { beforeColon: false, mode: 'minimum' }
-      }
+        multiLine: { beforeColon: false, mode: 'minimum' },
+      },
     ],
     'lines-around-comment': [
       'error',
@@ -115,20 +116,20 @@ module.exports = {
         allowObjectStart: true,
         allowObjectEnd: true,
         allowArrayStart: true,
-        allowArrayEnd: true
-      }
+        allowArrayEnd: true,
+      },
     ],
     'object-curly-spacing': [
       'error',
       'always',
-      { arraysInObjects: false, objectsInObjects: false }
+      { arraysInObjects: false, objectsInObjects: false },
     ],
     'object-curly-newline': [
       'error',
       {
         ObjectExpression: { multiline: true, minProperties: 5 },
-        ObjectPattern: { multiline: true }
-      }
+        ObjectPattern: { multiline: true },
+      },
     ],
     'newline-after-var': ['error', 'always'],
     'padding-line-between-statements': [
@@ -137,8 +138,8 @@ module.exports = {
       {
         blankLine: 'any',
         prev: ['const', 'let', 'var'],
-        next: ['const', 'let', 'var']
-      }
+        next: ['const', 'let', 'var'],
+      },
     ],
     'line-comment-position': ['error', { position: 'above' }],
     'brace-style': ['error', '1tbs', { allowSingleLine: true }],
@@ -149,8 +150,8 @@ module.exports = {
         objects: 'always-multiline',
         imports: 'always-multiline',
         exports: 'always-multiline',
-        functions: 'ignore'
-      }
+        functions: 'ignore',
+      },
     ],
     'no-trailing-spaces': ['error', { skipBlankLines: true }],
     'no-multiple-empty-lines': ['error', { max: 1, maxEOF: 1 }],
@@ -161,25 +162,25 @@ module.exports = {
         'newlines-between': 'ignore',
         groups: [
           ['builtin', 'external'],
-          ['internal', 'index', 'parent', 'sibling']
-        ]
-      }
+          ['internal', 'index', 'parent', 'sibling'],
+        ],
+      },
     ],
     'sort-imports': [
       0,
       {
         ignoreCase: true,
         ignoreMemberSort: false,
-        memberSyntaxSortOrder: ['single', 'multiple', 'all', 'none']
-      }
+        memberSyntaxSortOrder: ['single', 'multiple', 'all', 'none'],
+      },
     ],
     'sort-imports-es6-autofix/sort-imports-es6': [
       0,
       {
         ignoreCase: true,
         ignoreMemberSort: false,
-        memberSyntaxSortOrder: ['single', 'multiple', 'all', 'none']
-      }
+        memberSyntaxSortOrder: ['single', 'multiple', 'all', 'none'],
+      },
     ],
     'import-order-autofix/order': [
       0,
@@ -187,9 +188,9 @@ module.exports = {
         'newlines-between': 'ignore',
         groups: [
           ['builtin', 'external'],
-          ['internal', 'index', 'parent', 'sibling']
-        ]
-      }
+          ['internal', 'index', 'parent', 'sibling'],
+        ],
+      },
     ],
     'import/no-named-as-default-member': 0,
     'import/no-unresolved': 0,
@@ -199,8 +200,8 @@ module.exports = {
       {
         devDependencies: true,
         optionalDependencies: false,
-        peerDependencies: false
-      }
+        peerDependencies: false,
+      },
     ],
     'prettier/prettier': [
       0,
@@ -208,8 +209,8 @@ module.exports = {
         trailingComma: 'all',
         bracketSpacing: false,
         jsxBracketSameLine: true,
-        semi: true
-      }
-    ]
-  }
+        semi: true,
+      },
+    ],
+  },
 };

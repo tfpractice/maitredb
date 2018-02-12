@@ -1,11 +1,17 @@
-import bluebird from 'bluebird';
 import mongoose from 'mongoose';
 
 import TableSchema from './schema';
 
-mongoose.Promise = bluebird;
 TableSchema.statics.freeTables = function() {
   return this.find({ party: null });
+};
+
+TableSchema.query.free = function() {
+  return this.find({ party: null });
+};
+
+TableSchema.query.occupied = function() {
+  return this.find({ party: { $ne: null }});
 };
 
 TableSchema.methods.seatParty = function(party) {
