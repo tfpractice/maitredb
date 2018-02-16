@@ -11,7 +11,7 @@ const TableSchema = new Schema(
       type: Number,
       default: () => Faker.random.number({ min: 2, max: 8 }),
     },
-    party: { type: Schema.Types.ObjectId, default: null },
+    party: { type: Schema.Types.ObjectId, default: null, ref: 'Party' },
   },
   {
     toObject: { getters: true, virtuals: false },
