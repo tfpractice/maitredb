@@ -5,8 +5,7 @@ import mongoose from 'mongoose';
 import bluebird from 'bluebird';
 
 import { Table, Party } from '../routes';
-
-const DB_URL = process.env.DB_URL || `mongodb://localhost/maitredb`;
+import { API_PORT, DB_URL } from '../config';
 
 mongoose.Promise = bluebird;
 mongoose
@@ -26,9 +25,9 @@ app.use(bodyParser.urlencoded({ limit: '20mb', extended: false }));
 app.use(cookieParser());
 
 app.use('/api', Table, Party);
-
-app.listen(3000, () => {
-  console.log('maitredb listening on port 3000!');
+app.get('/', (req, res) => res.send('maitredb runnin'));
+app.listen(API_PORT, () => {
+  console.log(`maitredb listening on port ${API_PORT}!`);
 });
 
 export default app;

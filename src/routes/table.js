@@ -1,7 +1,6 @@
 import { Router } from 'express';
 import { Table } from '../controllers';
 
-console.log('Table', Table);
 const router = new Router();
 
 // Get all Tables

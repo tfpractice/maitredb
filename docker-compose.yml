@@ -3,6 +3,7 @@ services:
   web:
     environment:
       - DB_URL=mongodb://maitredb_db_1
+      - API_PORT=3000
     build: .
     volumes:
      - .:/app
