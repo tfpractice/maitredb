@@ -5,6 +5,10 @@ services:
       - DB_URL=mongodb://maitredb_db_1
       - API_PORT=3000
     build: .
+    image: tfpractice/maitredb
+    networks:
+      - frontend
+      - backend
     volumes:
      - .:/app
     ports:
@@ -12,6 +16,15 @@ services:
   db:
     image: 'mongo'
     volumes:
-     - /data/db
+     - db-data:/data/db
     ports:
       - 27017:27017
+    networks:
+      - backend
+      
+networks:
+  frontend:
+  backend:
+
+volumes:
+  db-data:

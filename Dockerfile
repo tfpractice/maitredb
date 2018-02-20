@@ -9,7 +9,7 @@ WORKDIR /app
 RUN yarn
  
 # Bundle app source
-# COPY . /usr/src/app
+COPY . /app
  
 # EXPOSE 3000 
 CMD [ "yarn", "start" ]
